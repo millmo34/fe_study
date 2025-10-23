@@ -20,23 +20,26 @@
         .red-box {
             background-color: red;
             position: relative;
-            left:100px;
-            top:50px;
+            left:50px;
         
         }
             /* 기본값일 경우, 스태틱이기 때문에 위치 지정이 안 된다. 포지션 속성 3가지 중 하나를 설정해줘야만 한다. */
         .green-box {
             background-color: green;
-            position: relative;
+            position: absolute;
+                /* absolute는 위치의 기준이 relative와 다르다.
+                    위치 조정이 가능한 부모요소의 시작지점이 기준이 된다.
+                    즉, 부모요소가 스태틱이면 움직이지 않는다.
+                    그렇기에, 렐러티브여야 움직인다.*/
             left:50px;
-            top:-100px;
+            top:50px;
         }
 
         .blue-box {
             background-color: blue;
-            position: relative;
-            left:-30px;
-            top:-220px;
+            position: absolute;
+            left: 30px;
+            top: 220px;
         }
     </style>
 

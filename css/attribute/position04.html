@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 4000px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        /*
+            position: sticky;
+            스크롤을 내릴 때 특정 위치에 고정되는 속성
+            top, left, right, bottom 속성과 함께 사용
+            position 속성 중에서 sticky가 가장 우선순위가 높음
+            position: fixed 보다도 우선순위가 높음
+            position: sticky 끼리는 z-index 속성으로 우선순위를 정할 수 있음
+            position: sticky; 를 사용하려면 부모 요소가 있어야 함
+            position::after, position:before 에는 적용되지 않음
+            position: sticky; 는 IE에서 지원하지 않음
+            position: sticky; 는 요소가 원래 있던 자리에서 벗어나지 못함
+            position: sticky; 는 요소가 부모 요소를 벗어나지 못함
+            position
+        
+        .red-box {
+            background-color: red;
+        }
+
+        .green-box {
+            background-color: green;
+            position: fixed;
+            z-index: 50;
+        }
+
+        .blue-box {
+            background-color: blue;
+            position: relative;
+            top: 150px;
+            left: 300px;
+            z-index: 80;
+        }
+
+        .top-box {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(2, 127, 190);
+            color: white;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+        
+        .navbar {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            position: sticky;
+            top: 30px;
+            z-index: 200;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="box red-box"></div>
+    <div class="box green-box"></div>
+    <div class="box blue-box"></div>
+
+    <div class="navbar">네비게이션 바</div>
+
+    <div class="top-box">top</div>
+</body>
+</html>
