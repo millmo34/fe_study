@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Zen Serif", serif;
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            border: 10px solid black;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box; /* content-box | border-box */
+            background-color: lightblue;
+        }
+        .box1 {
+            box-sizing: content-box; /* content-box | border-box */
+            background-color: lightcoral;
+            diplay: none;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+
+            margin:10px;
+            padding:10px;
+
+            box-sizing: border-box; /* content-box | border-box */
+            background-color: lightgreen;
+            diplay: inline;
+
+        }
+
+        .box2:hover {
+            background-color: orange;
+
+        }
+
+        .box3 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            
+            margin:10px;
+            padding:10px;
+
+
+            box-sizing: padding-box; /* content-box | border-box | padding-box */
+            background-color: lightgray;
+            diplay: inline-block;
+        }
+
+        .box3:hover {
+            border:2em dashed purple;
+
+        }
+        /* display 속성
+            none : 화면에 표시되지 않음
+            block : 블록 요소 (div, p, h1~h6, ul, ol, li, section, article 등)
+            inline : 인라인 요소 (span, a, strong, em 등)
+            inline-block : 인라인 블록 요소 (이미지 등) 외부적으로는 다른 요소와 상호작용하며 나란히 배치 
+        */
+
+        .span1 {
+            display: inline;
+            width: 200px;
+            height: 100px;
+            border: 2px solid blue;
+            background-color: yellow;
+        }
+        
+
+        .바깥 {
+            width: 300px;
+            height: 200px;
+            border: 2px solid red;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box;
+            background-color: pink;
+        }
+
+        .child {
+            width: 150px;
+            height: 100px;
+            border: 2px solid green;
+            padding: 5px;
+            margin: 5px;
+            box-sizing: border-box;
+            background-color: lightyellow;
+            display: none;
+        }   
+
+        .바깥:hover .child {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1">box1 </div>
+    <div class="box2">box2 </div>
+    <div class="box3">box3 </div>
+    <span class="span1">span1이라고 써있는 영역</span>
+    <span>Lorem ipsum dolor sit </span>
+    
+    <!-- div: 블록, 줄 바꿈 발생 -->
+<div style="background:lightblue;">이건 div야</div>
+<div style="background:lightgreen;">이것도 div야</div>
+
+<!-- span: 인라인, 같은 줄에 붙음 -->
+<p>
+  이건 <span style="color:red;">span</span> 으로 강조한 예시야.
+  또 <span style="font-weight:bold;">여기</span>도 인라인.
+</p>
+    
+<div class="바깥">
+    바깥이라고 쓴 영역
+    <div class="child">
+        자식
+    </div>
+</div>  
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* position 속성: 위치 지정 (배치)
+         static: 기본값, 문서 흐름에 따라 배치
+         relative: 요소 자신의 원래 위치를 기준으로 이동
+         absolute: 가장 가까운 위치 지정 조상 요소를 기준으로 이동 (없으면 문서(body) 기준)
+         fixed: 뷰포트를 기준으로 고정
+        */
+        .red-box {
+            background-color: red;
+            position: relative;
+            left:100px;
+            top:50px;
+        
+        }
+            /* 기본값일 경우, 스태틱이기 때문에 위치 지정이 안 된다. 포지션 속성 3가지 중 하나를 설정해줘야만 한다. */
+        .green-box {
+            background-color: green;
+            position: relative;
+            left:50px;
+            top:-100px;
+        }
+
+        .blue-box {
+            background-color: blue;
+            position: relative;
+            left:-30px;
+            top:-220px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="box red-box"></div>
+    <div class="box green-box"></div>
+    <div class="box blue-box"></div>
+
+</body>
+</html>
