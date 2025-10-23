@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header-menu-container {
+            width: 200px;
+            background-color: rgb(117, 117, 117);
+            position: relative;
+        }
+        .menu {
+            height: 50px;
+            text-align:center;
+        }
+        .submenu {
+            background-color: rgb(195, 155, 45);
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width:100%;
+            display: none;
+        }
+        /* div태그면 일단 로드는 다 해둔 상태가 된다. */
+
+        .item {
+            height: 50px;
+        }
+
+        /* .menu:hover ~ .submenu {
+            display: block;
+        } */
+        /* menu 영역에 커서를 올리면 submenu가 나타난다.. 라는 코드.
+        근데 이것만 있으면 서브메뉴로 커서를 옮겼을 때 서브메뉴가 다시 사라지게 된다. */
+
+        .header-menu-container:hover .submenu {
+            display: block;
+        }
+        /* 그래서 컨테이너에 호버를 걸어줘야 한다. (너 천재냐?) */
+        
+        .item:hover {
+            background-color: rgb(33, 180, 178);
+            text-decoration: underline;
+            cursor:pointer
+        }
+        /* 아이템에 호버를 걸면 배경색이 바뀌고, 텍스트에 밑줄이 생기고, 커서가 바뀌게 된다.*/     
+        </style>
+</head>
+<body>
+    
+    <div class="header-menu-container">
+        <div class="menu">menu</div>
+        <div class="submenu"></div>
+            <div class="item">submenu item1</div>
+            <div class="item">submenu item2</div>
+            <div class="item">submenu item3</div>
+        <!-- 컨테이너가 최고조상. 그 아래에 메뉴와 서브메뉴가 있다. 서브메뉴 아래에 아이템1,2,3이 있다. -->
+        
+    </div>
+</body>
+</html>
