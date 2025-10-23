@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Serif&amp;display=swap" rel="stylesheet">
+    <style>
+        .box1 {
+            width: 200px;
+            height: 170px;
+            padding: 15px;
+            border: 24px solid blue;
+            margin: 30px;
+            background-color: rgba(55, 107, 40, 0.254);
+            font-family: 'Zen Serif', serif;
+        }
+        .box1 .second-line {
+            text-align: right;
+        }
+        .box2 {
+            margin-top: 50px 100px;
+            border: 2px solid red;
+            border-width: 27px;
+            padding: 20px 10px 30px 10px;
+            margin: 30px;
+            background-color: rgba(200, 100, 40, 0.2);
+            font-family: 'Zen Serif', serif;
+
+            width: 200px;
+            height: 315px;
+
+            /* box-sizing 속성 */
+            box-sizing: border-box;
+        }
+        .box2 .first-line {
+            text-align: right;
+        }
+        .box2 .second-line {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        It is only<br>with the heart<br>that one<br>can see rightly; <br>
+        <p class="second-line">what is<br>essential is<br>invisible to the eye.</p>
+    </div>
+
+     <div class="box2">
+        <p class="first-line">It is only with the heart that one can see rightly; </p><br>
+        <p class="second-line">what is<br>essential is<br>invisible<br>to the eye.</p>
+    </div>
+</body>
+</html>
