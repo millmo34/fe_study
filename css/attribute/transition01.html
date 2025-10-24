@@ -1,0 +1,57 @@
+<!-- 마우스 오버에 관련된 것. 전환 효과 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            width:  100px;
+            height: 100px;
+            margin: 2%;
+            background-color: coral;
+            transition: background-color 0.5s ease;
+            transition-property: all 0.5s ease;
+            transition-duration: 0.5s;
+            transition-delay: 0.1s; /* 위에서부터 순서대로 트랜지션 효과가 연출되는가 보다. */
+            /* transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275) */
+    
+            /* transition: 속성명 지속시간 이징함수 */
+            /* transition. 언제 적용되느냐?
+                기존 클래스: 마우스 올릴 때, 내릴 때 O
+                hover 클래스: 마우스 올릴 때 O, 내릴 때 X */
+        }
+        .box:hover {
+            /* 마우스 오버 되었을 때의 상태 지정 */
+            /* 이 부분은 자바스크립트로도 구현 가능 */
+            width: 300px;   
+            background-color: lightblue;
+        }
+
+        .container:hover {
+            background-color: black;
+            width: 300px;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <div class="container">
+        <div class="box" style="transition-timing-function: linear;"></div>
+        <div class="box" style="transition-timing-function: ease;"></div>
+        <div class="box" style="transition-timing-function: ease-in;"></div>
+        <div class="box" style="transition-timing-function: ease-out;"></div>
+        <div class="box" style="transition-timing-function: ease-in-out;"></div>
+    </div>
+    </script>
+    
+</body>
+</html>
