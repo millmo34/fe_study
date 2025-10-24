@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+            body {
+                border-left-color: black;
+                border-left-style: solid;
+                border-left-width: 1px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .border-box {
+            position: relative;
+            top: 50px;
+            left: 50px;
+            width: 500px;
+            height: 300px;  
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 5px 5px 5px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .red-box {
+            background-color: rgb(255, 0, 0);
+        }
+
+        .green-box {
+            background-color: green;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        .yellow-box {
+            background-color: rgb(238, 255, 0);
+        }
+        .letter_box {
+            height:  45px;
+            background-color: lightgray;
+        }
+        /* dkdkdkdk */
+    </style>
+                
+</head>
+<body>
+    <div class="letter_box"><h3>배경색이 lightgray
+        <br>h3글자</h3></div>
+    
+<div class="box border-box">
+    <div class="box red-box"><h2>AA</h2></div>
+    <div class="box yellow-box"><h2>C</h2></div>
+    <div class="box green-box"><h2>B</h2></div>
+</div>
+  <h4>무언가를 적는다면?</h4>
+</body>
+</html>

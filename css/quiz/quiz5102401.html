@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!--1. 요소들이 들어있는 박스의 가로 크기는 500px  ok
+        2. 전체 박스는 화면 가운데에 정렬되며, (위아래 여백을 두고, 마진 오토로 해보자) ok
+        3. 브라우저 상단과의 여백은 50px ok
+        4. 빨간색 초록색 박스의 가로는 250px, 세로는 100px ok
+        5. 배경색에 맞춰 정렬한다. ??
+        6. 박스 사이에는 텍스트(글자가운데정렬)가 존재하며, ok
+        7. 전체 박스의 가운데에 정렬할 것 (컨테이너의 센터일까?)  ??   -->
+    <style>
+        * {
+            text-align: center; 
+            margin: top 50px;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 500px;
+            height: 1000px;   
+            margin: 0 auto;     /*가운데정렬. 이러면 상하 가운데정렬도 됐을 텐데*/
+            /* 
+                div 세로는 내부 요소 사이즈로 결정 
+                or 절대 사이즈 지정
+                or 부모요소의 크기대비 % 로 적용
+                or vh 단위 사용
+            */
+        }
+
+        .container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+
+
+        .top-left {
+            background-color: rgb(255, 0, 0);
+            width:250px;
+            height:100px;
+            float: left;
+        }
+
+        .top-right {
+            background-color: rgb(0, 255, 0);
+            width:250px;
+            height:100px;
+            float: left;
+        }
+
+        .bottom {
+            background-color: rgb(0, 0, 255);
+            width: 500px;
+            height: 200px;
+            float: left;
+            margin-top: 0%;
+        }
+
+        .p {
+            text-align: center; /* block 요소 내부 컨텐츠를 가운데 정렬. 중복되는 것 같지만...*/
+            margin: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <br> <p>글자 가운데 정렬</p> <br>
+        <div class="bottom"></div>
+    </div>
+
+</body>
+</html>
