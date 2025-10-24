@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=∆, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        
+
+            animation-name: boxAni;
+            animation-duration: 0.77s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0.77s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            /* animation-direction: alternate; 왕복 재생 */
+            /* animation-fill-mode: both; */
+            /* animation-fill-mode: forwards; */
+        }
+
+
+            .box:hover {
+                animation-play-state: paused;
+            }
+
+        @keyframes boxAni {
+            0% {
+                background-color: red;
+                width: 100px;
+            }
+            50% {
+                background-color: rgba(255, 0, 0, 0.751);
+                width: 150px;
+            }
+            100% {
+                background-color: rgba(128, 0, 0, 0.444);
+                width: 200px;
+            }
+        }
+
+        /* @keyframes boxAni {
+            0% {
+                background-color: red;
+                transform: translateX(0);
+            }
+            50% {
+                background-color: blue;
+                transform: translateX(200px) rotate(180deg);
+            }
+            100% {
+                background-color: green;
+                transform: translateX(0) rotate(360deg);
+            }
+        } */
+
+        .squirrel {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin-top: 40px;
+            background: radial-gradient(circle at 40% 30%, #a0522d 60%, #8b4513 100%);
+            border-radius: 50% 50% 40% 40%;
+            animation: walkCycle 0.6s ease-in-out infinite;
+        }
+
+        .squirrel::after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            top: 10px;
+            width: 25px;
+            height: 25px;
+            background: #8b4513;
+            border-radius: 50% 60% 40% 80%;
+        }
+
+        @keyframes walkCycle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+        </style>
+</head>
+<body>
+
+    <div class="box">   </div>
+    <div class="squirrel"></div>
+
+</body>
+</html>
