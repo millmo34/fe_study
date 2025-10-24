@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto; /* 좌우 여백을 자동으로 조절하라. 곧, 가운데 정렬이 된다. 근데, 상하 여백도 자동으로 최소화하네... */
+            padding: 0;
+            box-sizing: border-box;
+            /* 가운데 정렬 방법
+                1. margin: 0 auto; (좌우 margin 자동)
+                    inline-block 요소에 적용 가능
+                    block 요소에 적용 불가. 자기자신 요소가 가운데 정렬
+                2. text-align: center; 
+                    inline 요소 대상: 작동하지 않는다. 
+                    block 요소 대상: 내부 컨텐츠 요소가 가운데 정렬 */
+            /* block 요소 가운데 정렬 -> 자기자신 marginL 0 auto;
+                inline 요소 가운데 정렬 -> 자기부모 block 요소에 text-align: center; */
+                    
+        }
+
+        .p {
+            text-align: center; /* block 요소 내부 컨텐츠를 가운데 정렬 */
+        }
+
+        .span {
+            text-align: center; /* block 요소 내부 컨텐츠를 가운데 정렬 */
+        }
+
+        .out-box {
+            width: 400px;
+            border: 1px solid black;
+            text-align: center; /* block 요소 내부 컨텐츠를 가운데 정렬. 이건 상속되는 속성이다. */
+        }
+
+        .inner-box {
+            width: 300px;
+            border: 1px solid rgb(255, 0, 0);
+            margin: 0 auto; /* block 요소 자기자신을 가운데 정렬 */
+            
+        }
+
+        /* 지금은 전체 속성으로 마진0오토를 걸어뒀기 때문에, 모든 요소가 가운데 정렬된 상태다. */
+    </style>
+</head>
+<body>
+    <div class="out-box">
+        <p>p tag outbox</p>
+        <span>span tag outbox</span>
+
+        <div class="inner-box">
+            <h2>h2 tag inner box</h2>
+            <span>span tag inner box</span>
+            <br>
+            <input type="button" value="버튼">
+        </div>
+        
+    </div>
+</body>
+</html>
