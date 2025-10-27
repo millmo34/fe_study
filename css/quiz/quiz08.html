@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+/*  1. 3개의 박스 크기는 모두 100px*100px ok
+    2. 색상 변경: blue -> orange -> pink
+    3. 박스1: 좌우 이동 ok
+    4. 박스2: 상하 이동 ok
+    5. 박스3: 우측하단 방향으로 대각선 이동 ok
+    6. 끝없이 반복 ok */ 
+    /* + 박스1만 타이밍이 약간 느리다. ok */
+
+.box {
+    width: 100px;
+    height: 100px; 
+    margin-bottom: 10px;
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+@keyframes colorChange {
+    /* 색상 변화를 묶어서 관리한다. */
+    0% { background-color: blue; }
+    50% { background-color: orange; }
+    100% { background-color: pink; }
+}
+
+/* 각 박스의 움직임은 박스별 움직임으로 관리한다. */
+    @keyframes moveSide {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(100px); }
+    100% { transform: translateX(200px); }
+}
+    @keyframes moveDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100px); }
+    100% { transform: translateY(200px); }
+}
+    @keyframes moveDiagonal {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(100px, 100px); }
+    100% { transform: translate(200px, 200px); }
+}
+
+/* 애니메이션. 각 박스에 색상 변화와 이동 방향 속성을 붙인다.  */
+.box1 {
+    margin-left: 200px;
+    animation: moveSide 2s infinite alternate,
+               colorChange 2s infinite alternate;
+}
+
+.box2 {
+    animation: moveDown 1.5s infinite alternate,
+               colorChange 1.5s infinite alternate;
+}
+
+.box3 {
+    animation: moveDiagonal 1.5s infinite alternate,
+               colorChange 1.5s infinite alternate;
+}
+</style>
+<body>
+    <!-- 단순히 박스 3개만 클래스 지정해주면 된다. -->
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+</body>
+</html>
