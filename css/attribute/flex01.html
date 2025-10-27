@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .item
+        {
+            width: 100px;
+            /* height: 100px; */
+            border: 1px solid black
+        }
+
+        .container
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: stretch;
+            /* stretch를 쓰고 자식 요소에 높이 제한이 없으면, 부모 요소의 높이 만큼 쭈욱 늘린다. */
+
+            height: 400px;
+            background-color: lightblue;
+        }
+
+        /* justify-content는 주축 정렬을 의미한다. 주축이 가로일 땐 가로, 세로일 땐 세로 */
+
+        .content-center {
+            /* text-align: center;
+            padding-top: 20%; */
+            display: flex; /* 이제부터 플렉스(가로배치)를 가능하게 하겠다~ */
+            justify-content: center;
+            align-content: center; /* 요소의 주축, 대칭축에 대한 위치, 배치 결정 */
+        }
+
+        .container .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item content-center">4</div>
+        <div class="item content-center">5</div>
+        <div class="item style=align-items">6</div>
+
+    </div>
+</body>
+</html>
